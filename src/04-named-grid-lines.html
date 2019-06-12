@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>starter</title>
+  <link rel="stylesheet" href="./reset.css">
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns:
+        [left-sidebar-start] 1fr
+        [left-sidebar-end main-content-start] 2fr
+        [main-content-end right-sidebar-start] 1fr
+        [right-sidebar-end];
+      grid-template-rows:
+        [body-start] 3fr
+        [body-end footer-start] 1fr
+        [footer-end];
+      height: 100vh;
+      grid-gap: 2px;
+    }
+    .container > * {
+      background-color: PaleGoldenRod;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .left-sidebar {
+      grid-row: body-start / footer-end;
+    }
+    .footer {
+      grid-column: left-sidebar-end / right-sidebar-end;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-sidebar">Left Sidebar</div>
+    <div class="main-content">Main Content</div>
+    <div class="right-sidebar">Right Sidebar</div>
+    <div class="footer">Footer</div>
+  </div>
+</body>
+</html>
