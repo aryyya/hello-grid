@@ -5,9 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>01-up-and-running</title>
+  <link rel="stylesheet" href="./reset.css">
   <style>
     .container {
       display: grid;
+      grid-gap: 2px;
+      grid-template-areas:
+        "header"
+        "section"
+        "aside-1"
+        "aside-2"
+        "footer";
+    }
+    @media (min-width: 700px) {
+      .container {
+        grid-template-areas:
+          "header header header"
+          "aside-1 section aside-2"
+          "footer footer footer";
+      }
+    }
+    .container > * {
+      background-color: MediumSeaGreen;
+      font-size: 30px;
+    }
+    header {
+      grid-area: header;
+    }
+    aside:nth-of-type(1) {
+      grid-area: aside-1;
+    }
+    aside:nth-of-type(2) {
+      grid-area: aside-2;
+    }
+    section {
+      grid-area: section;
+    }
+    footer {
+      grid-area: footer;
     }
   </style>
 </head>
